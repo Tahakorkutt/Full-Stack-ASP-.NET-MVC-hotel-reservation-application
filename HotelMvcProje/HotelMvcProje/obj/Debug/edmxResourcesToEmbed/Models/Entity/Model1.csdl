@@ -66,6 +66,7 @@
     <Property Name="Aciklama" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Name="Durum" Type="Int32" />
     <NavigationProperty Name="TblMisafir" Relationship="Self.FK_TblReservation_TblMisafir" FromRole="TblReservation" ToRole="TblMisafir" />
+    <NavigationProperty Name="TblOda" Relationship="DbOtelYeniModel.FK_TblReservation_TblOda" FromRole="TblReservation" ToRole="TblOda" />
   </EntityType>
   <EntityType Name="TblYeniKayit">
     <Key>
@@ -101,6 +102,11 @@
       <End Role="TblReservation" EntitySet="TblReservations" />
     </AssociationSet>
     <EntitySet Name="TblMesajs" EntityType="DbOtelYeniModel.TblMesaj" />
+    <EntitySet Name="TblOdas" EntityType="DbOtelYeniModel.TblOda" />
+    <AssociationSet Name="FK_TblReservation_TblOda" Association="DbOtelYeniModel.FK_TblReservation_TblOda">
+      <End Role="TblOda" EntitySet="TblOdas" />
+      <End Role="TblReservation" EntitySet="TblReservations" />
+    </AssociationSet>
   </EntityContainer>
   <EntityType Name="TblMesaj">
     <Key>
@@ -112,4 +118,29 @@
     <Property Name="Konu" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
     <Property Name="Mesaj" Type="String" MaxLength="1050" FixedLength="false" Unicode="true" />
   </EntityType>
+  <EntityType Name="TblOda">
+    <Key>
+      <PropertyRef Name="OdaID" />
+    </Key>
+    <Property Name="OdaID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="OdaNo" Type="String" MaxLength="3" FixedLength="true" Unicode="false" />
+    <Property Name="Kart" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+    <Property Name="Kapasite" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="Aciklama" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+    <Property Name="Telefon" Type="String" MaxLength="4" FixedLength="true" Unicode="false" />
+    <Property Name="Durum" Type="Int32" />
+    <NavigationProperty Name="TblReservations" Relationship="DbOtelYeniModel.FK_TblReservation_TblOda" FromRole="TblOda" ToRole="TblReservation" />
+  </EntityType>
+  <Association Name="FK_TblReservation_TblOda">
+    <End Type="DbOtelYeniModel.TblOda" Role="TblOda" Multiplicity="0..1" />
+    <End Type="DbOtelYeniModel.TblReservation" Role="TblReservation" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TblOda">
+        <PropertyRef Name="OdaID" />
+      </Principal>
+      <Dependent Role="TblReservation">
+        <PropertyRef Name="Oda" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
 </Schema>

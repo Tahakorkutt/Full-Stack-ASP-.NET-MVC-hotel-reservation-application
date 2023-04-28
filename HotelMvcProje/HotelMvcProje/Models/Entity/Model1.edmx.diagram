@@ -9,10 +9,12 @@
         <EntityTypeShape EntityType="DbOtelYeniModel.Tblİletişim" Width="1.5" PointX="0.75" PointY="5.75" IsExpanded="true" />
         <EntityTypeShape EntityType="DbOtelYeniModel.TblMesaj2" Width="1.5" PointX="2.75" PointY="5.75" IsExpanded="true" />
         <EntityTypeShape EntityType="DbOtelYeniModel.TblMisafir" Width="1.5" PointX="0.75" PointY="1" IsExpanded="true" />
-        <EntityTypeShape EntityType="DbOtelYeniModel.TblReservation" Width="1.5" PointX="3" PointY="1.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="DbOtelYeniModel.TblReservation" Width="1.5" PointX="12.375" PointY="2.625" IsExpanded="true" />
         <EntityTypeShape EntityType="DbOtelYeniModel.TblYeniKayit" Width="1.5" PointX="5.75" PointY="3.75" IsExpanded="true" />
         <AssociationConnector Association="DbOtelYeniModel.FK_TblReservation_TblMisafir" ManuallyRouted="false" />
         <EntityTypeShape EntityType="DbOtelYeniModel.TblMesaj" Width="1.5" PointX="5.375" PointY="6.75" />
+        <EntityTypeShape EntityType="DbOtelYeniModel.TblOda" Width="1.5" PointX="9.875" PointY="1.75" />
+        <AssociationConnector Association="DbOtelYeniModel.FK_TblReservation_TblOda" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

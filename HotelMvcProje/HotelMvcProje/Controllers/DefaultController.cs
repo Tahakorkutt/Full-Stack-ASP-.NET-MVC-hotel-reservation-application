@@ -22,8 +22,14 @@ namespace HotelMvcProje.Controllers
        
         public PartialViewResult PartialFooter()
         {
+            var doluoda = db.TblOdas.Where(x => x.Durum != 1).Count();
+            ViewBag.d = doluoda;
+            var bosoda = db.TblOdas.Where(x => x.Durum == 1).Count();
+            ViewBag.b = bosoda;
             return PartialView();
-        }public PartialViewResult PartialSosyalMedya()
+        }
+        
+        public PartialViewResult PartialSosyalMedya()
         {
             return PartialView();
         }

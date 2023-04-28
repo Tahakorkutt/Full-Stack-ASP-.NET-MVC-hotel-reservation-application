@@ -32,5 +32,6 @@ namespace HotelMvcProje.Models.Entity
         public virtual DbSet<TblReservation> TblReservations { get; set; }
         public virtual DbSet<TblYeniKayit> TblYeniKayits { get; set; }
         public virtual DbSet<TblMesaj> TblMesajs { get; set; }
+        public virtual DbSet<TblOda> TblOdas { get; set; }
     }
 }

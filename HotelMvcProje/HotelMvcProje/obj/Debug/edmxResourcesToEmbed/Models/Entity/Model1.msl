@@ -93,5 +93,18 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="TblOdas">
+      <EntityTypeMapping TypeName="DbOtelYeniModel.TblOda">
+        <MappingFragment StoreEntitySet="TblOda">
+          <ScalarProperty Name="Durum" ColumnName="Durum" />
+          <ScalarProperty Name="Telefon" ColumnName="Telefon" />
+          <ScalarProperty Name="Aciklama" ColumnName="Aciklama" />
+          <ScalarProperty Name="Kapasite" ColumnName="Kapasite" />
+          <ScalarProperty Name="Kart" ColumnName="Kart" />
+          <ScalarProperty Name="OdaNo" ColumnName="OdaNo" />
+          <ScalarProperty Name="OdaID" ColumnName="OdaID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
   </EntityContainerMapping>
 </Mapping>
